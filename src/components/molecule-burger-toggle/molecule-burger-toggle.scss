@@ -1,0 +1,50 @@
+.burger-toggle {
+    padding: 0;
+    margin: 0;
+    height: auto;
+    background: none;
+    border: none;
+    height: 60px;
+    width: 60px;
+    position: relative;
+
+    &::before,
+    &::after {
+        content: '';
+        transform-origin: center center;
+        transition: all .3s;
+    }
+    &::before,
+    &::after,
+    span {
+        position: absolute;
+        top: 50%;
+        left: 35%;
+        width: 30%;
+        height: 2px;
+        background: #5c5c60;
+        border-radius: 3px;
+        margin-top: -1px;
+        font-size: 0px;
+        overflow: hidden;
+    }
+    &::before {
+        top: calc(50% - 6px);
+    }
+    &::after {
+        top: calc(50% + 6px);
+    }
+    &--active {
+        span {
+            opacity: 0;
+        }
+        &::before {
+            top: 50%;
+            transform: rotate(-45deg);
+        }
+        &::after {
+            top: 50%;
+            transform: rotate(45deg);
+        }
+    }
+}

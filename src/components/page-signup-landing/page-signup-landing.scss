@@ -1,0 +1,114 @@
+.main-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.sing-up {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    padding-top: 120px;
+
+    &__slogan {
+        position: relative;
+        z-index: 2;
+        height: 0;
+        max-width: calc( 100vw - 550px );
+
+        h1 {
+            text-align: left;
+            letter-spacing: -0.6px;
+            color: var(--base-green);
+            opacity: 1;
+            font-size: 100px;
+            font-weight: 400;
+            margin: 0;
+            height: 100px;
+            line-height: 100px;
+        }
+        h2 {
+            color: var(--base-blue);
+            opacity: 1;
+            font-size: 50px;
+            font-weight: 400;
+            margin: var(--base-spacing) 0;
+        }
+    }
+    &__form {
+        position: relative;
+        z-index: 2;
+        margin: calc( -1 * var(--base-spacing)) 0 0 auto;
+        max-width: 400px;
+        background: var(--base-background);
+        padding: calc( var(--base-spacing) * 2);
+        border: 2px solid var(--border-color);
+        border-radius: var(--base-spacing);
+    }
+    &__art {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 80vw;
+        max-width: calc(50vw + var(--max-wrapper) / 2 - 5vw);
+        height: calc(100vh - 230px);
+        border-top-right-radius: var(--base-spacing);
+        background: #e5ff44;
+        background: linear-gradient(to bottom,  #e5ff44 0%,#4b88c1 100%);
+
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: url(assets/world-map.png) center bottom no-repeat;
+            background-size: contain;
+        }
+
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .main-header {
+        z-index: 100;
+    }
+    .sing-up {
+        height: auto;
+        background: #e5ff44;
+
+        &__slogan {
+            position: relative;
+            height: auto;
+            max-width: 100%;
+            margin-bottom: calc( var(--base-spacing) * 2);
+            &::before {
+                content: '';
+                position: absolute;
+                top: -20px;
+                left: 0%;
+                width: 100vw;
+                height: 140px;
+                background: white;
+                z-index: -1;
+                margin-left: -5vw;
+            }
+        }
+        &__form {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        &__art {
+            position: relative;
+            height: 30vh;
+            width: 100vw;
+            border-radius: 0;
+            margin: 0 -5vw;
+        }
+    }
+
+}

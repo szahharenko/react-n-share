@@ -1,0 +1,103 @@
+body {
+  --base-spacing: 1.5rem;
+  --base-font-size: 18px;
+  --base-shadow: 0 0 9px -5px #0000004f;
+  --hover-brightness: .9;
+  --base-blue: #004eff;
+  --base-green: #B3D86D;
+  --border-color: var(--base-green);
+  --base-background: #fff;
+  --link-color: #000;
+  --button-color: #004eff;
+  --color-gray: #a6a7af;
+  --color-gray-light: #f4f4f6;
+  --max-wrapper: 1300px;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--base-background);
+}
+
+body, input, button, textarea, select {
+  font-size: var(--base-font-size);
+}
+a {
+  color: var(--link-color);
+}
+label {
+  display: block;
+}
+
+.wrapper {
+  width: var(--max-wrapper);
+  margin: 0 auto;
+  max-width: 90vw;
+}
+
+.font-s   {font-size: calc(var(--base-font-size) * 0.8);}
+.font-l   {font-size: calc(var(--base-font-size) * 1.5);}
+.font-xl  {font-size: calc(var(--base-font-size) * 2);}
+.font-xxl {font-size: calc(var(--base-font-size) * 3);}
+
+.normal {font-weight: normal;}
+.bold {font-weight: bold;}
+
+button,
+select,
+textarea,
+input[type=number],
+input[type=email],
+input[type=password],
+input[type=tel],
+input[type=text] {
+  box-sizing: border-box;
+  border: solid 1px var(--border-color);
+  background-color: var(--color-gray-light);
+  border-radius: 6px;
+  display: block;
+  width: 100%;
+  padding: calc( var(--base-spacing) / 1.5);
+  margin-bottom: calc( var(--base-spacing) / 1.5);
+}
+button {
+  background-color: var(--base-blue);
+  border-color: transparent;
+  color: #fff;
+}
+button.alt {
+  border-color: var(--border-color);
+  color: var(--border-color);
+  background-color: #fff;
+}
+select.is-invalid,
+textarea.is-invalid,
+input.is-invalid {
+  border-color: red;
+}
+.error-message {
+  display: block;
+  clear: both;
+  color: red;
+  font-size: 80%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.btn {
+  padding: var(--base-spacing);
+  display: block;
+  width: 100%;
+  border-radius: 40px;
+  font-size: calc(var(--base-font-size) * 1.2);
+}
+.btn-primary {
+  background-color: var(--button-color);
+  color: #fff;
+  font-weight: 600;
+}

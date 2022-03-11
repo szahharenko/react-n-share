@@ -1,0 +1,91 @@
+.register {
+    background-color: var(--base-background);
+    border-radius: 30px;
+
+    h2 {
+        margin-top: 0;
+    }
+
+    form {
+        .terms,
+        .or {
+            font-size: 80%;
+        }
+        .or {
+            text-align: center;
+            margin-top: calc(  var(--base-spacing) / -4);
+            margin-bottom: calc( var(--base-spacing) / 2);
+        }
+        .terms {
+            color: var(--color-gray);
+            a {
+                color: var(--base-blue);
+            }
+        }
+        .google-button {
+            cursor: pointer;
+            background-image: url(./assets//google.svg);
+            background-repeat: no-repeat;
+            background-position: 5px center;
+        }
+        .error-message {
+            margin-top: calc(  var(--base-spacing) / -2);
+            margin-bottom: calc( var(--base-spacing) / 2);
+        }
+        .cb {
+            position: relative;
+
+            input {
+                position: absolute;
+                bottom: 100%;
+                right: 100%;
+                width: 0;
+                height: 0;
+                border: none;
+                padding: 0;
+
+                + span {
+                    display: block;
+                    &::before {
+                        content: '';
+                        display: inline-block;
+                        text-align: center;
+                        width: 24px;
+                        height: 24px;
+                        line-height: 24px;
+                        border: solid 1px var(--color-gray);
+                        background-color: var(--color-gray-light);
+                        border-radius: 3px;
+                        vertical-align: middle;
+                        margin-right: 10px;
+                    }
+                }
+
+                &.is-invalid {
+                    color: red;
+                    + span {
+                        &::before {
+                            border-color: red;
+                        }
+                    }
+                }
+
+                &:checked {
+                    + span {
+                        &::before {
+                            content: '✓'
+                        }
+                    }
+                }
+            }
+        }
+        .row {
+            margin-bottom: var(--base-spacing);
+        }
+    }
+
+    &__prefix {
+        padding-right: 0;
+    }
+
+}

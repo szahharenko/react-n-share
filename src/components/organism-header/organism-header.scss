@@ -1,0 +1,105 @@
+.main-header {
+    background-color: var(--base-background);
+}
+.header {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &__logo {
+        position: relative;
+        padding: var(--base-spacing);
+        padding-left: 0;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        font-weight: bold;
+        color: #000;
+        img {display: block;}
+    }
+    &__menu {
+        flex: 1;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+
+        &--hidden + button,
+        &--hidden {
+            visibility: hidden;
+        }
+
+        li {
+            padding: var(--base-spacing);
+            margin: 0;
+            white-space: nowrap;
+            a {
+                color: var(--text-main-color);
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            &:nth-child(n+7) {
+                display: none;
+            }
+        }
+    }
+    .burger-toggle {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: calc(var(--base-spacing) * -1);
+    }
+}
+@media only screen and (max-width: 980px) {
+    .header {
+        overflow: hidden;
+        .burger-toggle {
+            display: block;
+        }
+        .burger-toggle,
+        &__logo {
+            z-index: 3;
+        }
+        &__menu {
+            transition: all .3s;
+            overflow: auto;
+            background: var(--base-background);
+            width: 60vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 100vw;
+            z-index: 2;
+            transform: translateX(0);
+            padding: var(--base-spacing);
+            padding-top: calc(var(--base-spacing) * 4);
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            li {
+                &:nth-child(n+7) {
+                    display: block;
+                }
+            }
+        }
+        &--active {
+            .header__menu {
+                transform: translateX(-100%);
+                box-shadow: var(--base-shadow);
+                display: grid;
+                li {
+                    flex: 1;
+                }
+            }
+
+        }
+    }
+  }
